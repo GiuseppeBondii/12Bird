@@ -1,0 +1,122 @@
+/* LoginRegisterGuest.css */
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--light-color) 0%, #ffffff 100%);
+    padding: 1rem;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 400px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.auth-title {
+    font-family: 'Georgia';
+    font-size: 2.25rem;
+    color: var(--title-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.auth-button {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-button:disabled {
+    background-color: #e0e0e0;
+    color: #9e9e9e;
+    cursor: not-allowed;
+}
+
+.auth-button.guest {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.auth-button.guest:hover {
+    background-color: #1565c0;
+}
+
+.auth-button.guest:active {
+    transform: scale(0.98);
+}
+
+.auth-subtitle {
+    color: #666666;
+    text-align: center;
+    font-size: 0.875rem;
+    margin-top: 1.5rem;
+}
+
+/* Ripple effect for buttons */
+.auth-button::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 10.01%);
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.auth-button:active::after {
+    transform: scale(0, 0);
+    opacity: 0.3;
+    transition: 0s;
+}
+
+/* Responsive styles to match your main CSS */
+@media (max-width: 1200px) {
+    .auth-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .auth-button {
+        padding: 0.875rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .auth-card {
+        padding: 1.5rem;
+    }
+
+    .auth-title {
+        font-size: 1.75rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .auth-button {
+        padding: 0.75rem;
+        font-size: 0.925rem;
+    }
+}
